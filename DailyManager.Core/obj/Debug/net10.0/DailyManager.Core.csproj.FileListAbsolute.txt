@@ -1,0 +1,11 @@
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\bin\Debug\net10.0\DailyManager.Core.deps.json
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\bin\Debug\net10.0\DailyManager.Core.dll
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\bin\Debug\net10.0\DailyManager.Core.pdb
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\DailyManager.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\DailyManager.Core.AssemblyInfoInputs.cache
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\DailyManager.Core.AssemblyInfo.cs
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\DailyManager.Core.csproj.CoreCompileInputs.cache
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\DailyManager.Core.dll
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\refint\DailyManager.Core.dll
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\DailyManager.Core.pdb
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\ref\DailyManager.Core.dll
