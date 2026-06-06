@@ -12,7 +12,13 @@ namespace DailyManager.Infra.Data;
             : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+
+            modelBuilder.Entity<DailyTask>()
+                .HasOne(t => t.User)
+                .WithMany(t => t.Tasks)
+                .HasForeignKey(t => t.UserId);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 

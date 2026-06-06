@@ -166,3 +166,4 @@ C:\Users\Mateus\Documents\repos\DailyManager\DailyManager\bin\Debug\net10.0\Dail
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager\bin\Debug\net10.0\DailyManager.Infra.pdb
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager\obj\Debug\net10.0\DailyManager.Api.csproj.AssemblyReference.cache
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager\obj\Debug\net10.0\DailyManager.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager\obj\Debug\net10.0\DailyManager.Api.sourcelink.json

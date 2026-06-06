@@ -15,3 +15,4 @@ C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Infra\obj\Debug\net10.
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Infra\obj\Debug\net10.0\DailyManager.Infra.pdb
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Infra\obj\Debug\net10.0\DailyManager.Infra.genruntimeconfig.cache
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Infra\obj\Debug\net10.0\ref\DailyManager.Infra.dll
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Infra\obj\Debug\net10.0\DailyManager.Infra.sourcelink.json

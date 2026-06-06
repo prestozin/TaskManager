@@ -9,3 +9,4 @@ C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\refint\DailyManager.Core.dll
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\DailyManager.Core.pdb
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\ref\DailyManager.Core.dll
+C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Core\obj\Debug\net10.0\DailyManager.Core.sourcelink.json

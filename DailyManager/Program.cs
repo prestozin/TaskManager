@@ -1,4 +1,4 @@
-using DailyManager.Infra.Data;
+    using DailyManager.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -17,6 +17,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+if (!app.Environment.IsProduction())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.MapControllers();
 
