@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using DailyManager.Application.DTOs;
+using DailyManager.Application.Interfaces;
+using DailyManager.Core.Entities;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DailyManager.Api.Controllers;
@@ -7,10 +10,22 @@ namespace DailyManager.Api.Controllers;
 [Route("api/[controller]")]
 public class TaskController : ControllerBase
 {
-    [HttpGet]
-    public async Task <IActionResult> GetById(Guid Id)
+    private readonly ITaskService _taskService;
+    public TaskController(ITaskService taskService)
     {
-        return Ok();
+        _taskService = taskService;
+    }
+
+
+    [HttpGet]
+    public async Task<IActionResult> GetByTitle(string title)
+    {
+       var result = await _taskService.GetByTitle(title);
+        
+        if (!result.IsSuccess)
+            return NotFound(result);
+
+        return Ok(result);
     }
 }
 

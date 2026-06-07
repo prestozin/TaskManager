@@ -822,6 +822,16 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "DailyManager.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/DailyManager.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DailyManager.Core.dll": {}
+        }
       }
     }
   },
@@ -2643,10 +2653,16 @@
         "system.composition.typedparts.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "DailyManager.Core/1.0.0": {
+      "type": "project",
+      "path": "../DailyManager.Core/DailyManager.Core.csproj",
+      "msbuildProject": "../DailyManager.Core/DailyManager.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "DailyManager.Core >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.8"
     ]
@@ -2683,7 +2699,11 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Mateus\\Documents\\repos\\DailyManager\\DailyManager.Core\\DailyManager.Core.csproj": {
+              "projectPath": "C:\\Users\\Mateus\\Documents\\repos\\DailyManager\\DailyManager.Core\\DailyManager.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

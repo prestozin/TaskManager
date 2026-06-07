@@ -1,6 +1,6 @@
 ﻿namespace DailyManager.Core.Entities
 {
-    public class DailyTask
+    public class UserTask
     {
         public Guid Id { get; set; }
         public string? Title { get; set; }

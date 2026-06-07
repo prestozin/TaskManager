@@ -5,7 +5,7 @@ namespace DailyManager.Infra.Data;
 
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<DailyTask> Tasks { get; set; }
+        public DbSet<UserTask> Tasks { get; set; }
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 
@@ -13,7 +13,7 @@ namespace DailyManager.Infra.Data;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<DailyTask>()
+            modelBuilder.Entity<UserTask>()
                 .HasOne(t => t.User)
                 .WithMany(t => t.Tasks)
                 .HasForeignKey(t => t.UserId);
