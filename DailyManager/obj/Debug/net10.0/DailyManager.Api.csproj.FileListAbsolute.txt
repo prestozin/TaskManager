@@ -335,3 +335,7 @@ C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager\obj\Debug\net1
 C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager\obj\Debug\net10.0\DailyManager.Api.pdb
 C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager\obj\Debug\net10.0\DailyManager.Api.genruntimeconfig.cache
 C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager\obj\Debug\net10.0\ref\DailyManager.Api.dll
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager\bin\Debug\net10.0\AutoMapper.dll
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager\bin\Debug\net10.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

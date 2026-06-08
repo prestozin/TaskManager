@@ -24,7 +24,11 @@ builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 if (!app.Environment.IsProduction())
 {

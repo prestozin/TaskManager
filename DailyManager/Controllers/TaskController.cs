@@ -1,7 +1,4 @@
-﻿using DailyManager.Application.DTOs;
-using DailyManager.Application.Interfaces;
-using DailyManager.Core.Entities;
-using Microsoft.AspNetCore.Http.HttpResults;
+﻿using DailyManager.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DailyManager.Api.Controllers;

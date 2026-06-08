@@ -1,5 +1,4 @@
-﻿
-using DailyManager.Application.DTOs;
+﻿using DailyManager.Application.DTOs;
 using DailyManager.Core.Entities;
 
 namespace DailyManager.Application.Interfaces;
