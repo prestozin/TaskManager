@@ -16,3 +16,21 @@ C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Application\bin\Debug\
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Application\bin\Debug\net10.0\DailyManager.Core.pdb
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyManager.Application.sourcelink.json
 C:\Users\Mateus\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyMan.9C244613.Up2Date
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\bin\Debug\net10.0\DailyManager.Application.deps.json
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\bin\Debug\net10.0\DailyManager.Application.runtimeconfig.json
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\bin\Debug\net10.0\DailyManager.Application.dll
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\bin\Debug\net10.0\DailyManager.Application.pdb
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\bin\Debug\net10.0\DailyManager.Core.dll
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\bin\Debug\net10.0\DailyManager.Core.pdb
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyManager.Application.csproj.AssemblyReference.cache
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyManager.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyManager.Application.AssemblyInfoInputs.cache
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyManager.Application.AssemblyInfo.cs
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyManager.Application.csproj.CoreCompileInputs.cache
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyManager.Application.sourcelink.json
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyMan.9C244613.Up2Date
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyManager.Application.dll
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\refint\DailyManager.Application.dll
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyManager.Application.pdb
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\DailyManager.Application.genruntimeconfig.cache
+C:\Users\Mateus Bacelar\Documents\repos\DailyManager\DailyManager.Application\obj\Debug\net10.0\ref\DailyManager.Application.dll
