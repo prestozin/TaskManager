@@ -17,7 +17,7 @@ public class UserController : ControllerBase
 
 
     [HttpPost("Register")]
-    public async Task<IActionResult> Register(UserRegisterDto dto)
+    public async Task<IActionResult> Register(RegisterDto dto)
     {
        var result = await _userService.RegisterAsync(dto);
 
@@ -28,7 +28,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("Login")]
-    public async Task<IActionResult> Login(UserLoginDto dto)
+    public async Task<IActionResult> Login(LoginDto dto)
     {
         var result = await _userService.LoginAsync(dto);
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DailyManager.Infra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47144e70bec50671305341148914e582b68e28d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3dcbaa58613bb175f8ff166ec3eb022a2f13b122")]
 [assembly: System.Reflection.AssemblyProductAttribute("DailyManager.Infra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DailyManager.Infra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

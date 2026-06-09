@@ -4,6 +4,6 @@ namespace DailyManager.Application.Interfaces;
 
 public interface IUserService
 {
-    Task<ResultDto<UserRegisterDto>> RegisterAsync(UserRegisterDto userRegisterDto);
-    Task<ResultDto<UserLoginDto>> LoginAsync(UserLoginDto userLoginDto);
+    Task<ResultDto<RegisterDto>> RegisterAsync(RegisterDto userRegisterDto);
+    Task<ResultDto<LoginDto>> LoginAsync(LoginDto userLoginDto);
 }

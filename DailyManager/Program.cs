@@ -1,4 +1,5 @@
 using DailyManager.Application.Interfaces;
+using DailyManager.Application.Mappings;
 using DailyManager.Application.Services;
 using DailyManager.Core.Interfaces;
 using DailyManager.Infra.Data;
@@ -20,6 +21,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
