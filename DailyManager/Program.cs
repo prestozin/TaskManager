@@ -1,32 +1,18 @@
-using DailyManager.Application.Interfaces;
-using DailyManager.Application.Mappings;
-using DailyManager.Application.Services;
-using DailyManager.Core.Interfaces;
-using DailyManager.Infra.Data;
-using DailyManager.Infra.Data.Repositories;
-using Microsoft.EntityFrameworkCore;
-
+using DailyManager.Infra.Configuration;
+using DailyManager.Application.Configuration;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-
-builder.Services.AddScoped<ITaskService, TaskService>();
-builder.Services.AddScoped<ITaskRepository, TaskRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Application and Infra services
+
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

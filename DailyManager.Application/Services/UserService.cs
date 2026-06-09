@@ -31,6 +31,16 @@ public class UserService : IUserService
 
     public async Task<ResultDto<LoginDto>> LoginAsync(LoginDto userLoginDto)
     {
-        return ResultDto<LoginDto>.Failure(string.Format("Usuario logado com sucesso"));
+        User user = await _userRepository.GetByEmailAsync(userLoginDto.Email);
+
+        if (user == null)
+            return ResultDto<LoginDto>.Failure(string.Format("Usuario não encontrado"));
+
+        bool validPassword = BCrypt.Net.BCrypt.Verify(userLoginDto.Password, user.HashPassword);
+
+        if (!validPassword)
+            return ResultDto<LoginDto>.Failure("Usuário ou senha inválidos");
+
+        return ResultDto<LoginDto>.Success("Usuário logado com sucesso");
     }
 }
