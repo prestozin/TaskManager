@@ -8,9 +8,11 @@ namespace DailyManager.Application.Services;
 public class UserService : IUserService
 {   
     private readonly IUserRepository _userRepository;
-    public UserService(IUserRepository userRepository)
+    private readonly IJwtService _jwtService;
+    public UserService(IUserRepository userRepository, IJwtService jwtService)
     {
         _userRepository = userRepository;
+        _jwtService = jwtService;
     }
     public async Task<ResultDto<RegisterDto>> RegisterAsync(RegisterDto userRegisterDto)
     {
@@ -29,18 +31,25 @@ public class UserService : IUserService
         return ResultDto<RegisterDto>.Success(string.Format("Usuario cadastrado com Sucesso"));
     }
 
-    public async Task<ResultDto<LoginDto>> LoginAsync(LoginDto userLoginDto)
+    public async Task<ResultDto<LoginResponseDto>> LoginAsync(LoginRequestDto userLoginDto)
     {
-        User user = await _userRepository.GetByEmailAsync(userLoginDto.Email);
+        User? user = await _userRepository.GetByEmailAsync(userLoginDto.Email);
 
         if (user == null)
-            return ResultDto<LoginDto>.Failure(string.Format("Usuario não encontrado"));
+            return ResultDto<LoginResponseDto>.Failure("Usuario não encontrado");
 
         bool validPassword = BCrypt.Net.BCrypt.Verify(userLoginDto.Password, user.HashPassword);
 
         if (!validPassword)
-            return ResultDto<LoginDto>.Failure("Usuário ou senha inválidos");
+            return ResultDto<LoginResponseDto>.Failure("Usuário ou senha inválidos");
 
-        return ResultDto<LoginDto>.Success("Usuário logado com sucesso");
+        string userToken = _jwtService.GenerateToken(user);
+
+        var loginResponse = new LoginResponseDto
+        {
+            Token = userToken
+        };
+
+        return ResultDto<LoginResponseDto>.Success(loginResponse);
     }
 }
