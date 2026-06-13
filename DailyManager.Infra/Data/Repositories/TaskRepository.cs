@@ -16,4 +16,10 @@ public class TaskRepository : ITaskRepository
     {
         return await _context.Tasks.FirstOrDefaultAsync(t => t.Title == title);
     }
+
+    public async Task AddTaskAsync(UserTask task)
+    {
+        await _context.AddAsync(task);
+        await _context.SaveChangesAsync();
+    }
 }
