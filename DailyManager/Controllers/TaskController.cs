@@ -21,7 +21,9 @@ public class TaskController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetByTitle(string title)
     {
-        var result = await _taskService.GetByTitle(title);
+        Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+        var result = await _taskService.GetTasksByTitle(title, userId);
 
         if (!result.IsSuccess)
             return NotFound(result);

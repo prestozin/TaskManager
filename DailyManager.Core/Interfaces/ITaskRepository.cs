@@ -4,6 +4,6 @@ namespace DailyManager.Core.Interfaces;
 
 public interface ITaskRepository
 {
-    Task<UserTask?> GetByTitle(string title);
+    Task<List<UserTask>> GetByTitle(string title, Guid userId);
     Task AddTaskAsync(UserTask task);
 }

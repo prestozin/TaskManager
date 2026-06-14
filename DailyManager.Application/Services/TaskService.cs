@@ -15,14 +15,16 @@ public class TaskService : ITaskService
     {
         _taskRepository = taskRepository;
     }
-    public async Task<ResultDto<UserTask>> GetByTitle(string title)
+    public async Task<ResultDto<List<TaskResponseDto>>> GetTasksByTitle(string title, Guid userId)
     {
-        var task = await _taskRepository.GetByTitle(title);
+        List<UserTask> tasks = await _taskRepository.GetByTitle(title, userId);
 
-        if (task == null)
-            return ResultDto<UserTask>.Failure(string.Format("Tarefa não encontrada"));
+        if (!tasks.Any())
+            return ResultDto<List<TaskResponseDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
 
-        return ResultDto<UserTask>.Success(string.Format("Tarefa encontrada"));
+        List<TaskResponseDto> listOfTaks = tasks.Adapt<List<TaskResponseDto>>();
+
+        return ResultDto<List<TaskResponseDto>>.Success(listOfTaks);
     }
 
     public async Task<ResultDto<UserTask>> AddTaskAsync(TaskRequestDto task, Guid userId)

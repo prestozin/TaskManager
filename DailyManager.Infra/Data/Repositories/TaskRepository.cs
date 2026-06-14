@@ -12,9 +12,14 @@ public class TaskRepository : ITaskRepository
         _context = context;
     }
 
-    public async Task<UserTask?> GetByTitle(string title)
+    public async Task<List<UserTask>> GetByTitle(string title, Guid userId)
     {
-        return await _context.Tasks.FirstOrDefaultAsync(t => t.Title == title);
+        List<UserTask> tasks = await _context.Tasks
+            .Where(t => t.Title != null && t.Title.Contains(title))
+            .Where(u => u.UserId == userId)
+            .ToListAsync();
+
+        return tasks;
     }
 
     public async Task AddTaskAsync(UserTask task)

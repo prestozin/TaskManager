@@ -6,6 +6,6 @@ namespace DailyManager.Application.Interfaces;
 
 public interface ITaskService
 {
-    Task<ResultDto<UserTask>> GetByTitle(string title);
+    Task<ResultDto<List<TaskResponseDto>>> GetTasksByTitle(string title, Guid userId);
     Task<ResultDto<UserTask>> AddTaskAsync(TaskRequestDto task, Guid userId);
 }

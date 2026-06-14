@@ -13,5 +13,10 @@ public class TaskMapping
             .Map(dest => dest.CreatedAt, src => DateTime.UtcNow)
             .Ignore(dest => dest.UserId)
             .Ignore(dest => dest.IsCompleted);
+
+        config.NewConfig<UserTask, TaskResponseDto>()
+            .Map(dest => dest.CreatedAt, src => src.CreatedAt)
+            .Map(dest => dest.Title, src =>src.Title)
+            .Map(dest => dest.Description, src => src.Description);
     }
 }
