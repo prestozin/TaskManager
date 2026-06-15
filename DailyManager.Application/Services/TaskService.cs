@@ -38,5 +38,14 @@ public class TaskService : ITaskService
         await _taskRepository.AddTaskAsync(newTask);
         return ResultDto<UserTask>.Success(string.Format("Tarefa criada com sucesso"));
     }
+
+    public async Task<ResultDto<List<PagedResultDto>>> GetAllTasks(Guid userId, PagedResultDto pagedParams)
+    {
+        if (userId == Guid.Empty || pagedParams == null )
+            return ResultDto<List<PagedResultDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
+
+        UserTask tasks = await _taskRepository.GetAllTasks(userId, pagedParams);
+
+    }
 }
 
