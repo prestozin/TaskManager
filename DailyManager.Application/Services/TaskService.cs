@@ -3,6 +3,7 @@ using DailyManager.Application.DTOs.Task;
 using DailyManager.Application.Interfaces;
 using DailyManager.Core.Entities;
 using DailyManager.Core.Interfaces;
+using DailyManager.Core.Shared;
 using Mapster;
 using Microsoft.AspNetCore.Http.HttpResults;
 
@@ -39,13 +40,21 @@ public class TaskService : ITaskService
         return ResultDto<UserTask>.Success(string.Format("Tarefa criada com sucesso"));
     }
 
-    public async Task<ResultDto<List<PagedResultDto>>> GetAllTasks(Guid userId, PagedResultDto pagedParams)
+    public async Task<ResultDto<PagedResultDto<TaskResponseDto>>> GetAllTasks(Guid userId, PagedParamsDto pagedParams)
     {
         if (userId == Guid.Empty || pagedParams == null )
-            return ResultDto<List<PagedResultDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
+            return ResultDto<PagedResultDto<TaskResponseDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
 
-        UserTask tasks = await _taskRepository.GetAllTasks(userId, pagedParams);
+        var (tasks, totalCount) = await _taskRepository.GetAllTasks(userId, pagedParams);
 
+        var taskDtos = tasks.Adapt<List<TaskResponseDto>>();
+        
+        if (!taskDtos.Any())
+            return ResultDto<PagedResultDto<TaskResponseDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
+
+        var pagedResult = new PagedResultDto<TaskResponseDto>(taskDtos, pagedParams.PageNumber, pagedParams.PageSize, totalCount);
+
+        return ResultDto<PagedResultDto<TaskResponseDto>>.Success(pagedResult);
     }
 }
 
