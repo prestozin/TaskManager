@@ -1,8 +1,8 @@
-﻿using DailyManager.Application.Interfaces;
-using DailyManager.Application.Services;
+﻿using TaskManager.Application.Interfaces;
+using TaskManager.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DailyManager.Application.Configuration;
+namespace TaskManager.Application.Configuration;
 
 public static class ServiceCollectionExtensions
 {

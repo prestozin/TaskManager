@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace DailyManager.Infra.Migrations
+namespace TaskManager.Infra.Migrations
 {
     /// <inheritdoc />
     public partial class UpdateTables_Constraints : Migration

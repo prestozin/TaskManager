@@ -12,19 +12,19 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["DailyManager/DailyManager.csproj", "DailyManager/"]
-RUN dotnet restore "./DailyManager/DailyManager.csproj"
+COPY ["TaskManager/TaskManager.csproj", "TaskManager/"]
+RUN dotnet restore "./TaskManager/TaskManager.csproj"
 COPY . .
-WORKDIR "/src/DailyManager"
-RUN dotnet build "./DailyManager.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/TaskManager"
+RUN dotnet build "./TaskManager.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./DailyManager.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./TaskManager.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "DailyManager.dll"]
+ENTRYPOINT ["dotnet", "TaskManager.dll"]

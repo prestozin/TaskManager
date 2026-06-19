@@ -1,7 +1,7 @@
-﻿using DailyManager.Application.DTOs;
-using DailyManager.Core.Entities;
+﻿using TaskManager.Application.DTOs;
+using TaskManager.Core.Entities;
 using Mapster;
-namespace DailyManager.Application.Mappings;
+namespace TaskManager.Application.Mappings;
 
 public class UserMapping 
 {

@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DailyManager.Application\DailyManager.Application.csproj" />
-    <ProjectReference Include="..\DailyManager.Core\DailyManager.Core.csproj" />
-    <ProjectReference Include="..\DailyManager.Infra\DailyManager.Infra.csproj" />
+    <ProjectReference Include="..\DailyManager.Application\TaskManager.Application.csproj" />
+    <ProjectReference Include="..\DailyManager.Core\TaskManager.Core.csproj" />
+    <ProjectReference Include="..\DailyManager.Infra\TaskManager.Infra.csproj" />
   </ItemGroup>
 
 </Project>

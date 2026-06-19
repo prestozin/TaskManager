@@ -1,4 +1,4 @@
-﻿namespace DailyManager.Core.Shared;
+﻿namespace TaskManager.Core.Shared;
 
 public class PagedParamsDto
 {

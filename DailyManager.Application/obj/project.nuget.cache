@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PNCSg13Gxu4=",
+  "dgSpecHash": "tqLP0JQxJ5Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Application\\DailyManager.Application.csproj",
+  "projectFilePath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Application\\TaskManager.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mateus Bacelar\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
     "C:\\Users\\Mateus Bacelar\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

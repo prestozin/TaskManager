@@ -1,6 +1,6 @@
-﻿namespace DailyManager.Core.Entities
+﻿namespace TaskManager.Core.Entities
 {
-    public class UserTask
+    public class TaskItem
     {
         public Guid Id { get; set; }
         public string? Title { get; set; }

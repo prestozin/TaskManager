@@ -1,11 +1,11 @@
-﻿using DailyManager.Application.DTOs.Task;
-using DailyManager.Application.Interfaces;
-using DailyManager.Core.Entities;
+﻿using TaskManager.Application.DTOs.Task;
+using TaskManager.Application.Interfaces;
+using TaskManager.Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace DailyManager.Api.Controllers;
+namespace TaskManager.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

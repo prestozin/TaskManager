@@ -1,8 +1,8 @@
-﻿using DailyManager.Application.DTOs;
-using DailyManager.Application.Interfaces;
+﻿using TaskManager.Application.DTOs;
+using TaskManager.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DailyManager.Api.Controllers;
+namespace TaskManager.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

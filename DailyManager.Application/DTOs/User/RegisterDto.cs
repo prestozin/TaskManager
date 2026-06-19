@@ -1,4 +1,4 @@
-﻿namespace DailyManager.Application.DTOs;
+﻿namespace TaskManager.Application.DTOs;
 
 public class RegisterDto
 {

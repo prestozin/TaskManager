@@ -1,11 +1,11 @@
-﻿using DailyManager.Core.Entities;
-using DailyManager.Core.Shared;
+﻿using TaskManager.Core.Entities;
+using TaskManager.Core.Shared;
 
-namespace DailyManager.Core.Interfaces;
+namespace TaskManager.Core.Interfaces;
 
 public interface ITaskRepository
 {
-    Task<List<UserTask>> GetByTitle(string title, Guid userId);
-    Task AddTaskAsync(UserTask task);
-    Task<(IEnumerable<UserTask> tasks, int totalCount)> GetAllTasks(Guid userId, PagedParamsDto pagedParams);
+    Task<List<TaskItem>> GetByTitle(string title, Guid userId);
+    Task AddTaskAsync(TaskItem task);
+    Task<(IEnumerable<TaskItem> tasks, int totalCount)> GetAllTasks(Guid userId, PagedParamsDto pagedParams);
 }

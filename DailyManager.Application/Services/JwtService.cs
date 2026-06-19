@@ -1,13 +1,13 @@
 ﻿
-using DailyManager.Application.Interfaces;
-using DailyManager.Core.Entities;
+using TaskManager.Application.Interfaces;
+using TaskManager.Core.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace DailyManager.Application.Services;
+namespace TaskManager.Application.Services;
 
 public class JwtService :  IJwtService
 {

@@ -1,7 +1,7 @@
 ﻿
-using DailyManager.Core.Entities;
+using TaskManager.Core.Entities;
 
-namespace DailyManager.Core.Interfaces;
+namespace TaskManager.Core.Interfaces;
 
 public interface IUserRepository
 {

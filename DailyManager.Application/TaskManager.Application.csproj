@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DailyManager.Core\DailyManager.Core.csproj" />
+    <ProjectReference Include="..\DailyManager.Core\TaskManager.Core.csproj" />
   </ItemGroup>
 
 </Project>

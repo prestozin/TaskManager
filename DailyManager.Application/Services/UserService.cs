@@ -1,10 +1,10 @@
 ﻿using Mapster;
-using DailyManager.Application.DTOs;
-using DailyManager.Application.Interfaces;
-using DailyManager.Core.Entities;
-using DailyManager.Core.Interfaces;
+using TaskManager.Application.DTOs;
+using TaskManager.Application.Interfaces;
+using TaskManager.Core.Entities;
+using TaskManager.Core.Interfaces;
 
-namespace DailyManager.Application.Services;
+namespace TaskManager.Application.Services;
 public class UserService : IUserService
 {   
     private readonly IUserRepository _userRepository;

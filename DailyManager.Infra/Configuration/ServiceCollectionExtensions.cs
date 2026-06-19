@@ -1,11 +1,11 @@
-﻿using DailyManager.Core.Interfaces;
-using DailyManager.Infra.Data;
-using DailyManager.Infra.Data.Repositories;
+﻿using TaskManager.Core.Interfaces;
+using TaskManager.Infra.Data;
+using TaskManager.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DailyManager.Infra.Configuration;
+namespace TaskManager.Infra.Configuration;
 
 public static class ServiceCollectionExtensions
 {

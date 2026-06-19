@@ -1,4 +1,4 @@
-﻿namespace DailyManager.Application.DTOs.Task;
+﻿namespace TaskManager.Application.DTOs.Task;
 
 public class TaskRequestDto
 {

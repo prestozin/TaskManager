@@ -3,7 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using System.Text;
 
-namespace DailyManager.Api.Configurations;
+namespace TaskManager.Api.Configurations;
 
 public static class ServiceCollectionExtensions
 {

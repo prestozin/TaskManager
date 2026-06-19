@@ -1,9 +1,9 @@
-﻿using DailyManager.Core.Entities;
-using DailyManager.Core.Interfaces;
+﻿using TaskManager.Core.Entities;
+using TaskManager.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 
-namespace DailyManager.Infra.Data.Repositories;
+namespace TaskManager.Infra.Data.Repositories;
 
 public class UserRepository : IUserRepository
 {

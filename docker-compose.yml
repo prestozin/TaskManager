@@ -2,7 +2,7 @@ services:
 
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: DailyManager-sqlserver
+    container_name: TaskManager-sqlserver
 
     environment:
       ACCEPT_EULA: "Y"

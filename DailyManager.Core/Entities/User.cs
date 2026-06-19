@@ -1,4 +1,4 @@
-﻿namespace DailyManager.Core.Entities
+﻿namespace TaskManager.Core.Entities
 {
     public class User
     {
@@ -7,6 +7,6 @@
         public string? Email { get; set; }
         public string HashPassword { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
-        public ICollection<UserTask>? Tasks { get; set; } = [];
+        public ICollection<TaskItem>? Tasks { get; set; } = [];
     }
 }

@@ -1,6 +1,6 @@
-﻿using DailyManager.Application.DTOs;
+﻿using TaskManager.Application.DTOs;
 
-namespace DailyManager.Application.Interfaces;
+namespace TaskManager.Application.Interfaces;
 
 public interface IUserService
 {

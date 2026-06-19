@@ -1114,14 +1114,14 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "DailyManager.Core/1.0.0": {
+      "TaskManager.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
-          "bin/placeholder/DailyManager.Core.dll": {}
+          "bin/placeholder/TaskManager.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DailyManager.Core.dll": {}
+          "bin/placeholder/TaskManager.Core.dll": {}
         }
       }
     }
@@ -2794,18 +2794,18 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "DailyManager.Core/1.0.0": {
+    "TaskManager.Core/1.0.0": {
       "type": "project",
-      "path": "../DailyManager.Core/DailyManager.Core.csproj",
-      "msbuildProject": "../DailyManager.Core/DailyManager.Core.csproj"
+      "path": "../DailyManager.Core/TaskManager.Core.csproj",
+      "msbuildProject": "../DailyManager.Core/TaskManager.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "DailyManager.Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 10.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 10.0.8",
-      "Microsoft.EntityFrameworkCore.Tools >= 10.0.8"
+      "Microsoft.EntityFrameworkCore.Tools >= 10.0.8",
+      "TaskManager.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2815,9 +2815,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\DailyManager.Infra.csproj",
-      "projectName": "DailyManager.Infra",
-      "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\DailyManager.Infra.csproj",
+      "projectUniqueName": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\TaskManager.Infra.csproj",
+      "projectName": "TaskManager.Infra",
+      "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\TaskManager.Infra.csproj",
       "packagesPath": "C:\\Users\\Mateus Bacelar\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\obj\\",
       "projectStyle": "PackageReference",
@@ -2841,8 +2841,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\DailyManager.Core.csproj": {
-              "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\DailyManager.Core.csproj"
+            "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\TaskManager.Core.csproj": {
+              "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\TaskManager.Core.csproj"
             }
           }
         }

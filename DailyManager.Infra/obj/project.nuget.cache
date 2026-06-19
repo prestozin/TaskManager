@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E+Hh1462c4M=",
+  "dgSpecHash": "2yKf5JNzTHY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\DailyManager.Infra.csproj",
+  "projectFilePath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\TaskManager.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mateus Bacelar\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Mateus Bacelar\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

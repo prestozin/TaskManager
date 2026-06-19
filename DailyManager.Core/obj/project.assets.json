@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\DailyManager.Core.csproj",
-      "projectName": "DailyManager.Core",
-      "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\DailyManager.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\TaskManager.Core.csproj",
+      "projectName": "TaskManager.Core",
+      "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\TaskManager.Core.csproj",
       "packagesPath": "C:\\Users\\Mateus Bacelar\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\obj\\",
       "projectStyle": "PackageReference",

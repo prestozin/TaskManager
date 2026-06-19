@@ -1,6 +1,6 @@
-using DailyManager.Infra.Configuration;
-using DailyManager.Application.Configuration;
-using DailyManager.Api.Configurations;
+using TaskManager.Infra.Configuration;
+using TaskManager.Application.Configuration;
+using TaskManager.Api.Configurations;
 
 
 var builder = WebApplication.CreateBuilder(args);

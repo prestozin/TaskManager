@@ -1192,47 +1192,47 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "DailyManager.Application/1.0.0": {
+      "TaskManager.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "BCrypt.Net-Next": "4.2.0",
-          "DailyManager.Core": "1.0.0",
           "Mapster": "10.0.7",
           "Microsoft.AspNetCore.OpenApi": "10.0.8",
           "Microsoft.IdentityModel.Tokens": "8.19.1",
-          "System.IdentityModel.Tokens.Jwt": "8.19.1"
+          "System.IdentityModel.Tokens.Jwt": "8.19.1",
+          "TaskManager.Core": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/DailyManager.Application.dll": {}
+          "bin/placeholder/TaskManager.Application.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DailyManager.Application.dll": {}
+          "bin/placeholder/TaskManager.Application.dll": {}
         }
       },
-      "DailyManager.Core/1.0.0": {
+      "TaskManager.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
-          "bin/placeholder/DailyManager.Core.dll": {}
+          "bin/placeholder/TaskManager.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DailyManager.Core.dll": {}
+          "bin/placeholder/TaskManager.Core.dll": {}
         }
       },
-      "DailyManager.Infra/1.0.0": {
+      "TaskManager.Infra/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "DailyManager.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "10.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8"
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8",
+          "TaskManager.Core": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/DailyManager.Infra.dll": {}
+          "bin/placeholder/TaskManager.Infra.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DailyManager.Infra.dll": {}
+          "bin/placeholder/TaskManager.Infra.dll": {}
         }
       }
     }
@@ -3794,31 +3794,31 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "DailyManager.Application/1.0.0": {
+    "TaskManager.Application/1.0.0": {
       "type": "project",
-      "path": "../DailyManager.Application/DailyManager.Application.csproj",
-      "msbuildProject": "../DailyManager.Application/DailyManager.Application.csproj"
+      "path": "../DailyManager.Application/TaskManager.Application.csproj",
+      "msbuildProject": "../DailyManager.Application/TaskManager.Application.csproj"
     },
-    "DailyManager.Core/1.0.0": {
+    "TaskManager.Core/1.0.0": {
       "type": "project",
-      "path": "../DailyManager.Core/DailyManager.Core.csproj",
-      "msbuildProject": "../DailyManager.Core/DailyManager.Core.csproj"
+      "path": "../DailyManager.Core/TaskManager.Core.csproj",
+      "msbuildProject": "../DailyManager.Core/TaskManager.Core.csproj"
     },
-    "DailyManager.Infra/1.0.0": {
+    "TaskManager.Infra/1.0.0": {
       "type": "project",
-      "path": "../DailyManager.Infra/DailyManager.Infra.csproj",
-      "msbuildProject": "../DailyManager.Infra/DailyManager.Infra.csproj"
+      "path": "../DailyManager.Infra/TaskManager.Infra.csproj",
+      "msbuildProject": "../DailyManager.Infra/TaskManager.Infra.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "DailyManager.Application >= 1.0.0",
-      "DailyManager.Core >= 1.0.0",
-      "DailyManager.Infra >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.8",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.23.0",
-      "Swashbuckle.AspNetCore >= 10.2.1"
+      "Swashbuckle.AspNetCore >= 10.2.1",
+      "TaskManager.Application >= 1.0.0",
+      "TaskManager.Core >= 1.0.0",
+      "TaskManager.Infra >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3828,9 +3828,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager\\DailyManager.Api.csproj",
-      "projectName": "DailyManager.Api",
-      "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager\\DailyManager.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager\\TaskManager.Api.csproj",
+      "projectName": "TaskManager.Api",
+      "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager\\TaskManager.Api.csproj",
       "packagesPath": "C:\\Users\\Mateus Bacelar\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager\\obj\\",
       "projectStyle": "PackageReference",
@@ -3854,14 +3854,14 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Application\\DailyManager.Application.csproj": {
-              "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Application\\DailyManager.Application.csproj"
+            "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Application\\TaskManager.Application.csproj": {
+              "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Application\\TaskManager.Application.csproj"
             },
-            "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\DailyManager.Core.csproj": {
-              "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\DailyManager.Core.csproj"
+            "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\TaskManager.Core.csproj": {
+              "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Core\\TaskManager.Core.csproj"
             },
-            "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\DailyManager.Infra.csproj": {
-              "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\DailyManager.Infra.csproj"
+            "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\TaskManager.Infra.csproj": {
+              "projectPath": "C:\\Users\\Mateus Bacelar\\Documents\\repos\\DailyManager\\DailyManager.Infra\\TaskManager.Infra.csproj"
             }
           }
         }

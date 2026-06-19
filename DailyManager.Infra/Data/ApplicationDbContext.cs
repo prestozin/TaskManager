@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using DailyManager.Core.Entities;
+using TaskManager.Core.Entities;
 
-namespace DailyManager.Infra.Data;
+namespace TaskManager.Infra.Data;
 
 public class ApplicationDbContext : DbContext
 {
-    public DbSet<UserTask> Tasks { get; set; }
+    public DbSet<TaskItem> Tasks { get; set; }
     public DbSet<User> Users { get; set; }
 
 
@@ -32,7 +32,7 @@ public class ApplicationDbContext : DbContext
                 .HasMaxLength(255);
         });
 
-        modelBuilder.Entity<UserTask>(entity =>
+        modelBuilder.Entity<TaskItem>(entity =>
         {
             entity.HasKey(t => t.Id);
 

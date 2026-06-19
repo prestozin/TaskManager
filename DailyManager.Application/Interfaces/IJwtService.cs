@@ -1,6 +1,6 @@
-﻿using DailyManager.Core.Entities;
+﻿using TaskManager.Core.Entities;
 
-namespace DailyManager.Application.Interfaces;
+namespace TaskManager.Application.Interfaces;
 
 public interface IJwtService
 {
