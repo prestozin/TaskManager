@@ -1,9 +1,10 @@
-﻿using TaskManager.Application.DTOs.Task;
-using TaskManager.Application.Interfaces;
-using TaskManager.Core.Entities;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using TaskManager.Application.DTOs.Task;
+using TaskManager.Application.Interfaces;
+using TaskManager.Core.Entities;
+using TaskManager.Core.Shared;
 
 namespace TaskManager.Api.Controllers;
 
@@ -38,6 +39,20 @@ public class TaskController : ControllerBase
         Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 
         var result = await _taskService.AddTaskAsync(task, userId);
+
+        if (!result.IsSuccess)
+            return NotFound(result);
+
+        return Ok(result);
+    }
+
+    [Authorize]
+    [HttpGet("Add")]
+    public async Task<IActionResult> GetAllTasks([FromQuery]PagedParamsDto pagedParams )
+    {
+        Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+        var result = await _taskService.GetAllTasks(userId, pagedParams);
 
         if (!result.IsSuccess)
             return NotFound(result);
