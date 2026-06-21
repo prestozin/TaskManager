@@ -1,9 +1,9 @@
 <Solution>
   <Folder Name="/src/">
     <File Path="docker-compose.yml" />
-    <Project Path="DailyManager.Application/TaskManager.Application.csproj" />
-    <Project Path="DailyManager.Core/TaskManager.Core.csproj" Id="5d77d514-6b2b-4d4c-9b85-5b4b525c550a" />
-    <Project Path="DailyManager.Infra/TaskManager.Infra.csproj" />
-    <Project Path="DailyManager/TaskManager.Api.csproj" />
+    <Project Path="TaskManager.Application/TaskManager.Application.csproj" />
+    <Project Path="TaskManager.Core/TaskManager.Core.csproj" />
+    <Project Path="TaskManager.Infra/TaskManager.Infra.csproj" />
+    <Project Path="TaskManager/TaskManager.Api.csproj" />
   </Folder>
 </Solution>
