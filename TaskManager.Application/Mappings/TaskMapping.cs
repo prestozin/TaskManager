@@ -4,19 +4,20 @@ using TaskManager.Core.Entities;
 using Mapster;
 namespace TaskManager.Application.Mappings;
 
-public class TaskMapping 
+public class TaskMapping : IRegister
 {
-    public void RegisterMapping(TypeAdapterConfig config)
+    public void Register(TypeAdapterConfig config)
     {
         config.NewConfig<TaskRequestDto, TaskItem>()
             .Map(dest => dest.Id, src => Guid.NewGuid())
-            .Map(dest => dest.CreatedAt, src => DateTime.UtcNow)
-            .Ignore(dest => dest.UserId)
-            .Ignore(dest => dest.IsCompleted);
+            .Ignore(dest => dest.CreatedAt)
+            .Ignore(dest => dest.UserId!);
+  
 
         config.NewConfig<TaskItem, TaskResponseDto>()
             .Map(dest => dest.CreatedAt, src => src.CreatedAt)
             .Map(dest => dest.Title, src =>src.Title)
-            .Map(dest => dest.Description, src => src.Description);
+            .Map(dest => dest.Description, src => src.Description)
+            .Map(dest => dest.Status, src => src.Status.Name);
     }
 }

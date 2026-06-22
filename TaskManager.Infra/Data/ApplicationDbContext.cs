@@ -7,6 +7,7 @@ public class ApplicationDbContext : DbContext
 {
     public DbSet<TaskItem> Tasks { get; set; }
     public DbSet<User> Users { get; set; }
+    public DbSet<StatusTask> Status { get; set; }
 
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {}
@@ -46,6 +47,19 @@ public class ApplicationDbContext : DbContext
             entity.HasOne(t => t.User)
                 .WithMany(t => t.Tasks)
                 .HasForeignKey(t => t.UserId);
+
+            entity.HasOne(t => t.Status)
+                .WithMany()
+                .HasForeignKey(t => t.StatusId);
+        });
+
+        modelBuilder.Entity<StatusTask>(entity =>
+        {
+            entity.HasKey(ts => ts.Id);
+
+            entity.Property(ts => ts.Name)
+                .IsRequired()
+                .HasMaxLength(50);
         });
 
         base.OnModelCreating(modelBuilder);

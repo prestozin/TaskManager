@@ -19,12 +19,12 @@ public class TaskService : ITaskService
     {
         List<TaskItem> tasks = await _taskRepository.GetByTitle(title, userId);
 
-        if (!tasks.Any())
+        if (tasks.Count == 0)
             return ResultDto<List<TaskResponseDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
 
-        List<TaskResponseDto> listOfTaks = tasks.Adapt<List<TaskResponseDto>>();
+        List<TaskResponseDto> listOfTasks = tasks.Adapt<List<TaskResponseDto>>();
 
-        return ResultDto<List<TaskResponseDto>>.Success(listOfTaks);
+        return ResultDto<List<TaskResponseDto>>.Success(listOfTasks);
     }
 
     public async Task<ResultDto<TaskItem>> AddTaskAsync(TaskRequestDto task, Guid userId)
@@ -48,7 +48,7 @@ public class TaskService : ITaskService
 
         List<TaskResponseDto> tasksDtos = tasks.Adapt<List<TaskResponseDto>>();
         
-        if (!tasksDtos.Any())
+        if (tasksDtos.Count == 0)
             return ResultDto<PagedResultDto<TaskResponseDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
 
         PagedResultDto<TaskResponseDto> pagedResult = new PagedResultDto<TaskResponseDto>(tasksDtos, pagedParams.PageNumber, pagedParams.PageSize, totalCount);

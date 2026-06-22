@@ -35,6 +35,7 @@ public class TaskRepository : ITaskRepository
         int totalCount = await query.CountAsync();
 
         var tasks = await query
+            .Include(t => t.Status)
             .OrderByDescending(t => t.CreatedAt)
             .Skip((pagedParams.PageNumber - 1) * pagedParams.PageSize)
             .Take(pagedParams.PageSize)
