@@ -1,7 +1,7 @@
 using Mapster;
-using System.Reflection;
 using TaskManager.Api.Configurations;
 using TaskManager.Application.Configuration;
+using TaskManager.Application.Mappings;
 using TaskManager.Infra.Configuration;
 
 
@@ -18,7 +18,8 @@ builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddSwaggerConfiguration();
-TypeAdapterConfig.GlobalSettings.Scan(Assembly.GetExecutingAssembly());
+
+TypeAdapterConfig.GlobalSettings.Scan(typeof(TaskMapping).Assembly);
 
 var app = builder.Build();
 

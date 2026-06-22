@@ -52,6 +52,8 @@ public class TaskService : ITaskService
             return ResultDto<PagedResultDto<TaskResponseDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
 
         PagedResultDto<TaskResponseDto> pagedResult = new PagedResultDto<TaskResponseDto>(tasksDtos, pagedParams.PageNumber, pagedParams.PageSize, totalCount);
+        Console.WriteLine(tasksDtos.First().CreatedAt);
+        Console.WriteLine(tasksDtos.First().Status);
 
         return ResultDto<PagedResultDto<TaskResponseDto>>.Success(pagedResult);
     }
