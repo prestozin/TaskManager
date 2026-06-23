@@ -19,12 +19,40 @@ public class TaskController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet]
+    [HttpGet("Id")]
+    public async Task<IActionResult> GetById(Guid taskId)
+    {
+        Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+        var result = await _taskService.GetTaskById(taskId, userId);
+
+        if (!result.IsSuccess)
+            return NotFound(result);
+
+        return Ok(result);
+    }
+
+    [Authorize]
+    [HttpGet("Title")]
     public async Task<IActionResult> GetByTitle(string title)
     {
         Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 
         var result = await _taskService.GetTasksByTitle(title, userId);
+
+        if (!result.IsSuccess)
+            return NotFound(result);
+
+        return Ok(result);
+    }
+
+    [Authorize]
+    [HttpGet("GetAll")]
+    public async Task<IActionResult> GetAllTasks([FromQuery] PagedParamsDto pagedParams)
+    {
+        Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+        var result = await _taskService.GetAllTasks(userId, pagedParams);
 
         if (!result.IsSuccess)
             return NotFound(result);
@@ -47,12 +75,26 @@ public class TaskController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("GetAll")]
-    public async Task<IActionResult> GetAllTasks([FromQuery]PagedParamsDto pagedParams )
+    [HttpPut("Edit")]
+    public async Task<IActionResult> EditTask(TaskEditDto dto)
     {
         Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 
-        var result = await _taskService.GetAllTasks(userId, pagedParams);
+        var result = await _taskService.EditTaskAsync(dto, userId);
+
+        if (!result.IsSuccess)
+            return NotFound(result);
+
+        return Ok(result);
+    }
+
+    [Authorize]
+    [HttpDelete("Delete")]
+    public async Task<IActionResult> DeleteTask(Guid taskId)
+    {
+        Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+        var result = await _taskService.DeleteTaskAsync(taskId, userId);
 
         if (!result.IsSuccess)
             return NotFound(result);

@@ -13,12 +13,19 @@ public class TaskRepository : ITaskRepository
         _context = context;
     }
 
-    public async Task<List<TaskItem>> GetByTitle(string title, Guid userId)
+    public async Task<List<TaskItem>> GetTaskByTitle(string title, Guid userId)
     {
        return await _context.Tasks
             .Where(t => t.Title != null && t.Title.Contains(title))
             .Where(u => u.UserId == userId)
             .ToListAsync();
+    }
+
+    public async Task<TaskItem> GetTaskById(Guid taskId, Guid userId)
+    {
+        return await _context.Tasks
+            .Include(t => t.Status)
+            .SingleOrDefaultAsync(t => t.Id == taskId && t.UserId == userId);
     }
 
     public async Task AddTaskAsync(TaskItem task)
@@ -43,5 +50,20 @@ public class TaskRepository : ITaskRepository
 
 
         return (tasks, totalCount);
+    }
+
+    public async Task EditTaskAsync(TaskItem task)
+    {
+       _context.Update(task);
+       await _context.SaveChangesAsync();
+    }
+
+    public async Task<bool> DeleteTaskAsync(TaskItem task) 
+    {
+       var taskToDelete =  _context.Remove(task);
+
+       await _context.SaveChangesAsync();
+
+       return taskToDelete != null;
     }
 }

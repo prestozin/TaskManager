@@ -18,6 +18,13 @@ public class TaskMapping : IRegister
             .Map(dest => dest.CreatedAt, src => src.CreatedAt)
             .Map(dest => dest.Title, src =>src.Title)
             .Map(dest => dest.Description, src => src.Description)
-            .Map(dest => dest.Status, src => src.Status.Name);
+            .Map(dest => dest.Status, src => src.Status!.Name);
+
+        config.NewConfig<TaskEditDto, TaskItem>()
+           .Ignore(dest => dest.CreatedAt)
+           .Ignore(dest => dest.Id!)
+           .Map(dest => dest.Title, src => src.Title)
+           .Map(dest => dest.Description, src => src.Description)
+           .Map(dest => dest.StatusId, src => src.StatusId);
     }
 }
