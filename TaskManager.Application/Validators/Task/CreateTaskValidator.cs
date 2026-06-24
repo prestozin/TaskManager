@@ -1,9 +1,12 @@
-﻿using FluentValidation;
-using TaskManager.Application.DTOs.Task;
+﻿using TaskManager.Application.DTOs;
+using TaskManager.Application.Validators.Task;
+
 
 namespace TaskManager.Application.Validators;
 
-public class CreateTaskValidator : AbstractValidator<CreateTaskDto>
+public class CreateTaskValidator : BaseTaskValidator<CreateTaskDto>
 {
-
+    public CreateTaskValidator()
+    {
+    }
 }

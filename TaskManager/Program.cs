@@ -1,7 +1,10 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Mapster;
 using TaskManager.Api.Configurations;
 using TaskManager.Application.Configuration;
 using TaskManager.Application.Mappings;
+using TaskManager.Application.Validators;
 using TaskManager.Infra.Configuration;
 
 
@@ -12,12 +15,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssembly(typeof(CreateTaskValidator).Assembly);
+
 //Application and Infra services
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddSwaggerConfiguration();
+
+
 
 TypeAdapterConfig.GlobalSettings.Scan(typeof(TaskMapping).Assembly);
 

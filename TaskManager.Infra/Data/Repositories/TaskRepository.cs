@@ -21,7 +21,7 @@ public class TaskRepository : ITaskRepository
             .ToListAsync();
     }
 
-    public async Task<TaskItem> GetTaskById(Guid taskId, Guid userId)
+    public async Task<TaskItem> GetTaskById(Guid? taskId, Guid userId)
     {
         return await _context.Tasks
             .Include(t => t.Status)

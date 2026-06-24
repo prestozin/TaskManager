@@ -1,11 +1,7 @@
-﻿using TaskManager.Core.Entities;
+﻿namespace TaskManager.Application.DTOs;
 
-namespace TaskManager.Application.DTOs.Task;
-
-public class TaskResponseDto
+public class TaskResponseDto : TaskBaseDto
 {
-    public string? Title { get; set; }
-    public string? Description { get; set; }
     public DateTime CreatedAt { get; set; }
     public string? Status { get; set; }
 }

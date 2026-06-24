@@ -1,7 +1,7 @@
 ﻿
 namespace TaskManager.Core.Enums;
 
-public enum StatusTaskEnum
+public enum EStatusTask
 {
     Pending = 1,
     InProgress = 2,

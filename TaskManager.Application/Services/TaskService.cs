@@ -1,5 +1,4 @@
 ﻿using TaskManager.Application.DTOs;
-using TaskManager.Application.DTOs.Task;
 using TaskManager.Application.Interfaces;
 using Mapster;
 using TaskManager.Core.Interfaces;

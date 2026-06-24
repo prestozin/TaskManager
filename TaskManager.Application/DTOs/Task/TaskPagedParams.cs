@@ -1,5 +1,5 @@
 ﻿
-namespace TaskManager.Application.DTOs.Task;
+namespace TaskManager.Application.DTOs;
 
 public class TaskPagedParams
 {
@@ -8,6 +8,4 @@ public class TaskPagedParams
     public int PageSize { get; set; } = 10;
 
     public string? Title { get; set; }
-
-    public bool? IsCompleted { get; set; }
 }

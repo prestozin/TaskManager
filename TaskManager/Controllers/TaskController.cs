@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using TaskManager.Application.DTOs.Task;
+using TaskManager.Application.DTOs;
 using TaskManager.Application.Interfaces;
 using TaskManager.Core.Shared;
 

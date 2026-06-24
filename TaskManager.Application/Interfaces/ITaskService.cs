@@ -1,5 +1,4 @@
 ﻿using TaskManager.Application.DTOs;
-using TaskManager.Application.DTOs.Task;
 using TaskManager.Core.Entities;
 using TaskManager.Core.Shared;
 

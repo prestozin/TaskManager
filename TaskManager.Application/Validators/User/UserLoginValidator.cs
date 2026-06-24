@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using TaskManager.Application.DTOs;
+using TaskManager.Core.Constants;
 
 namespace TaskManager.Application.Validators.User;
 
@@ -9,18 +10,14 @@ public class UserLoginValidator : AbstractValidator<UserLoginDto>
     {
         RuleFor(x => x.Email)
            .NotEmpty()
-                .WithMessage("O e-mail é obrigatório.")
+                .WithMessage(Messages.EmailRequired)
            .EmailAddress()
-                .WithMessage("O e-mail informado é inválido.")
-           .MaximumLength(255)
-                .WithMessage("O e-mail não pode exceder 255 caracteres."); ;
+                .WithMessage(Messages.EmailInvalid)
+           .MaximumLength(Constants.EmailMaxLength)
+                .WithMessage(string.Format(Messages.EmailMaxLength, Constants.EmailMaxLength));
 
         RuleFor(x => x.Password)
             .NotEmpty()
-                .WithMessage("A senha é obrigatória.")
-            .MinimumLength(8)
-                .WithMessage("A senha deve possuir pelo menos 8 caracteres.")
-            .MaximumLength(100)
-                .WithMessage("A senha não pode exceder 100 caracteres.");
+                .WithMessage(Messages.PasswordRequired);
     }
 }

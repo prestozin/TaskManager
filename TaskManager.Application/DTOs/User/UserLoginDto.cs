@@ -1,7 +1,6 @@
-﻿namespace TaskManager.Application.DTOs;
+﻿
+namespace TaskManager.Application.DTOs;
 
-public class UserLoginDto
+public class UserLoginDto : AuthBaseDto
 {
-    public string Email { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
 }

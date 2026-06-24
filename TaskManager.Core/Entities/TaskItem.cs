@@ -10,7 +10,7 @@ namespace TaskManager.Core.Entities
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public Guid? UserId { get; set; }
         public User? User { get; set; }
-        public int StatusId { get; set; } = (int)StatusTaskEnum.Pending;
+        public int StatusId { get; set; } = (int)EStatusTask.Pending;
         public StatusTask? Status { get; set; }
     }
 }
