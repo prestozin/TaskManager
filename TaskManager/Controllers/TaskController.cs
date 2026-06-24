@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using TaskManager.Application.DTOs.Task;
 using TaskManager.Application.Interfaces;
-using TaskManager.Core.Entities;
 using TaskManager.Core.Shared;
 
 namespace TaskManager.Api.Controllers;

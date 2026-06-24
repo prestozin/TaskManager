@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using TaskManager.Application.DTOs;
 using TaskManager.Application.Interfaces;
+using TaskManager.Core.Constants;
 using TaskManager.Core.Entities;
 using TaskManager.Core.Interfaces;
 
@@ -19,7 +20,7 @@ public class UserService : IUserService
         bool exists = await _userRepository.ExistsAsync(userRegisterDto.Email);
 
         if (exists)
-            return ResultDto<RegisterDto>.Failure(string.Format("Usuario já cadastrado"));
+            return ResultDto<RegisterDto>.Failure(string.Format(Messages.UserAlreadyExists));
 
         var newUser = userRegisterDto.Adapt<User>();
 
@@ -28,7 +29,7 @@ public class UserService : IUserService
         newUser.HashPassword = BCrypt.Net.BCrypt.HashPassword(userRegisterDto.Password);
 
         await _userRepository.AddAsync(newUser);
-        return ResultDto<RegisterDto>.Success(string.Format("Usuario cadastrado com Sucesso"));
+        return ResultDto<RegisterDto>.Success(string.Format(Messages.UserCreatedSucessfully));
     }
 
     public async Task<ResultDto<LoginResponseDto>> LoginAsync(LoginRequestDto userLoginDto)
@@ -36,12 +37,12 @@ public class UserService : IUserService
         User? user = await _userRepository.GetByEmailAsync(userLoginDto.Email);
 
         if (user == null)
-            return ResultDto<LoginResponseDto>.Failure("Usuario não encontrado");
+            return ResultDto<LoginResponseDto>.Failure(Messages.UserNotFound);
 
         bool validPassword = BCrypt.Net.BCrypt.Verify(userLoginDto.Password, user.HashPassword);
 
         if (!validPassword)
-            return ResultDto<LoginResponseDto>.Failure("Usuário ou senha inválidos");
+            return ResultDto<LoginResponseDto>.Failure(Messages.UserOrPasswordInvalid);
 
         string userToken = _jwtService.GenerateToken(user);
 

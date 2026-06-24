@@ -5,6 +5,7 @@ using Mapster;
 using TaskManager.Core.Interfaces;
 using TaskManager.Core.Entities;
 using TaskManager.Core.Shared;
+using TaskManager.Core.Constants;
 
 namespace TaskManager.Application.Services;
 public class TaskService : ITaskService
@@ -20,7 +21,7 @@ public class TaskService : ITaskService
         List<TaskItem> tasks = await _taskRepository.GetTaskByTitle(title, userId);
 
         if (tasks.Count == 0)
-            return ResultDto<List<TaskResponseDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
+            return ResultDto<List<TaskResponseDto>>.Failure(string.Format(Messages.TaskNotFound));
 
         List<TaskResponseDto> listOfTasks = tasks.Adapt<List<TaskResponseDto>>();
 
@@ -30,12 +31,12 @@ public class TaskService : ITaskService
     public async Task<ResultDto<TaskResponseDto>> GetTaskById(Guid taskId, Guid userId)
     {
         if (taskId == Guid.Empty || userId == Guid.Empty)
-            return ResultDto<TaskResponseDto>.Failure(string.Format("Falha ao buscar tarefa"));
+            return ResultDto<TaskResponseDto>.Failure(string.Format(Messages.TaskFetchFailed));
 
         TaskItem task = await _taskRepository.GetTaskById(taskId, userId);
 
         if (task == null)
-            return ResultDto<TaskResponseDto>.Failure(string.Format("Nenhuma tarefa encontrada"));
+            return ResultDto<TaskResponseDto>.Failure(string.Format(Messages.TaskNotFound));
 
         TaskResponseDto taskDto = task.Adapt<TaskResponseDto>();
 
@@ -45,14 +46,14 @@ public class TaskService : ITaskService
     public async Task<ResultDto<PagedResultDto<TaskResponseDto>>> GetAllTasks(Guid userId, PagedParamsDto pagedParams)
     {
         if (userId == Guid.Empty || pagedParams == null)
-            return ResultDto<PagedResultDto<TaskResponseDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
+            return ResultDto<PagedResultDto<TaskResponseDto>>.Failure(string.Format(Messages.TaskNotFound));
 
         var (tasks, totalCount) = await _taskRepository.GetAllTasks(userId, pagedParams);
 
         List<TaskResponseDto> tasksDtos = tasks.Adapt<List<TaskResponseDto>>();
 
         if (tasksDtos.Count == 0)
-            return ResultDto<PagedResultDto<TaskResponseDto>>.Failure(string.Format("Nenhuma tarefa encontrada"));
+            return ResultDto<PagedResultDto<TaskResponseDto>>.Failure(string.Format(Messages.TaskNotFound));
 
         PagedResultDto<TaskResponseDto> pagedResult = new PagedResultDto<TaskResponseDto>(tasksDtos, pagedParams.PageNumber, pagedParams.PageSize, totalCount);
 
@@ -62,23 +63,23 @@ public class TaskService : ITaskService
     public async Task<ResultDto<TaskItem>> AddTaskAsync(TaskRequestDto task, Guid userId)
     {
         if (task == null || userId == Guid.Empty)
-            return ResultDto<TaskItem>.Failure(string.Format("Falha ao criar tarefa"));
+            return ResultDto<TaskItem>.Failure(string.Format(Messages.TaskCreationFailed));
 
         TaskItem newTask = task.Adapt<TaskItem>();
         newTask.UserId = userId;
 
         await _taskRepository.AddTaskAsync(newTask);
-        return ResultDto<TaskItem>.Success(string.Format("Tarefa criada com sucesso"));
+        return ResultDto<TaskItem>.Success(string.Format(Messages.TaskCreatedSuccessfully));
     }
     public async Task<ResultDto<TaskResponseDto>> EditTaskAsync(TaskEditDto dto, Guid userId)
     {
         if (dto.Id == Guid.Empty || userId == Guid.Empty)
-            return ResultDto<TaskResponseDto>.Failure(string.Format("Falha ao editar tarefa"));
+            return ResultDto<TaskResponseDto>.Failure(string.Format(Messages.TaskUpdateFailed));
 
         TaskItem task = await _taskRepository.GetTaskById(dto.Id, userId);
 
         if (task == null)
-            return ResultDto<TaskResponseDto>.Failure(string.Format("Nenhuma tarefa encontrada"));
+            return ResultDto<TaskResponseDto>.Failure(string.Format(Messages.TaskNotFound));
 
         dto.Adapt(task);
 
@@ -92,15 +93,15 @@ public class TaskService : ITaskService
     public async Task<ResultDto<string>> DeleteTaskAsync(Guid taskId, Guid userId)
     {
         if (taskId == Guid.Empty || userId == Guid.Empty)
-            return ResultDto<string>.Failure(string.Format("Falha ao deletar tarefa"));
+            return ResultDto<string>.Failure(string.Format(Messages.TaskDeletionFailed));
 
         TaskItem task = await _taskRepository.GetTaskById(taskId, userId);
 
         if (task == null)
-            return ResultDto<string>.Failure(string.Format("Nenhuma tarefa encontrada"));
+            return ResultDto<string>.Failure(string.Format(Messages.TaskNotFound));
 
         await _taskRepository.DeleteTaskAsync(task);
-        return ResultDto<string>.Success(string.Format("Tarefa deletada com sucesso"));
+        return ResultDto<string>.Success(string.Format(Messages.TaskDeletedSuccessfully));
     }
 }
 
