@@ -60,7 +60,7 @@ public class TaskService : ITaskService
         return ResultDto<PagedResultDto<TaskResponseDto>>.Success(pagedResult);
     }
 
-    public async Task<ResultDto<TaskItem>> AddTaskAsync(TaskRequestDto task, Guid userId)
+    public async Task<ResultDto<TaskItem>> AddTaskAsync(CreateTaskDto task, Guid userId)
     {
         if (task == null || userId == Guid.Empty)
             return ResultDto<TaskItem>.Failure(string.Format(Messages.TaskCreationFailed));
@@ -71,7 +71,7 @@ public class TaskService : ITaskService
         await _taskRepository.AddTaskAsync(newTask);
         return ResultDto<TaskItem>.Success(string.Format(Messages.TaskCreatedSuccessfully));
     }
-    public async Task<ResultDto<TaskResponseDto>> EditTaskAsync(TaskEditDto dto, Guid userId)
+    public async Task<ResultDto<TaskResponseDto>> EditTaskAsync(EditTaskDto dto, Guid userId)
     {
         if (dto.Id == Guid.Empty || userId == Guid.Empty)
             return ResultDto<TaskResponseDto>.Failure(string.Format(Messages.TaskUpdateFailed));

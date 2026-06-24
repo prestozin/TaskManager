@@ -61,7 +61,7 @@ public class TaskController : ControllerBase
 
     [Authorize]
     [HttpPost("Add")]
-    public async Task<IActionResult> AddTask(TaskRequestDto task)
+    public async Task<IActionResult> AddTask(CreateTaskDto task)
     {
         Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 
@@ -75,7 +75,7 @@ public class TaskController : ControllerBase
 
     [Authorize]
     [HttpPut("Edit")]
-    public async Task<IActionResult> EditTask(TaskEditDto dto)
+    public async Task<IActionResult> EditTask(EditTaskDto dto)
     {
         Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 

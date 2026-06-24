@@ -7,7 +7,7 @@ public class UserMapping
 {
     public void RegisterMapping(TypeAdapterConfig config)
     {
-        config.NewConfig<RegisterDto, User>()
+        config.NewConfig<RegisterUserDto, User>()
             .Ignore(dest => dest.Id)
             .Ignore(dest => dest.HashPassword)
             .Ignore(dest => dest.CreatedAt);

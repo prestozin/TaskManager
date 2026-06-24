@@ -15,12 +15,12 @@ public class UserService : IUserService
         _userRepository = userRepository;
         _jwtService = jwtService;
     }
-    public async Task<ResultDto<RegisterDto>> RegisterAsync(RegisterDto userRegisterDto)
+    public async Task<ResultDto<RegisterUserDto>> RegisterAsync(RegisterUserDto userRegisterDto)
     {
         bool exists = await _userRepository.ExistsAsync(userRegisterDto.Email);
 
         if (exists)
-            return ResultDto<RegisterDto>.Failure(string.Format(Messages.UserAlreadyExists));
+            return ResultDto<RegisterUserDto>.Failure(string.Format(Messages.UserAlreadyExists));
 
         var newUser = userRegisterDto.Adapt<User>();
 
@@ -29,10 +29,10 @@ public class UserService : IUserService
         newUser.HashPassword = BCrypt.Net.BCrypt.HashPassword(userRegisterDto.Password);
 
         await _userRepository.AddAsync(newUser);
-        return ResultDto<RegisterDto>.Success(string.Format(Messages.UserCreatedSucessfully));
+        return ResultDto<RegisterUserDto>.Success(string.Format(Messages.UserCreatedSucessfully));
     }
 
-    public async Task<ResultDto<LoginResponseDto>> LoginAsync(LoginRequestDto userLoginDto)
+    public async Task<ResultDto<LoginResponseDto>> LoginAsync(UserLoginDto userLoginDto)
     {
         User? user = await _userRepository.GetByEmailAsync(userLoginDto.Email);
 

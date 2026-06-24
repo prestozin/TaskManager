@@ -8,7 +8,7 @@ public class TaskMapping : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {
-        config.NewConfig<TaskRequestDto, TaskItem>()
+        config.NewConfig<CreateTaskDto, TaskItem>()
             .Map(dest => dest.Id, src => Guid.NewGuid())
             .Ignore(dest => dest.CreatedAt)
             .Ignore(dest => dest.UserId!);
@@ -20,7 +20,7 @@ public class TaskMapping : IRegister
             .Map(dest => dest.Description, src => src.Description)
             .Map(dest => dest.Status, src => src.Status!.Name);
 
-        config.NewConfig<TaskEditDto, TaskItem>()
+        config.NewConfig<EditTaskDto, TaskItem>()
            .Ignore(dest => dest.CreatedAt)
            .Ignore(dest => dest.Id!)
            .Map(dest => dest.Title, src => src.Title)
