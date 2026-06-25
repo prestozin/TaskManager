@@ -15,9 +15,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddValidatorsFromAssembly(typeof(CreateTaskValidator).Assembly);
-
 //Application and Infra services
 
 builder.Services.AddApplication();

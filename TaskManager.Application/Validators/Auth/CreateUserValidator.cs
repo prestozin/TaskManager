@@ -2,11 +2,11 @@
 using TaskManager.Application.DTOs;
 using TaskManager.Core.Constants;
 
-namespace TaskManager.Application.Validators.User;
+namespace TaskManager.Application.Validators;
 
-public class RegisterUserValidator : AbstractValidator<RegisterUserDto>
+public class CreateUserValidator : AbstractValidator<CreateUserDto>
 {
-    public RegisterUserValidator()
+    public CreateUserValidator()
     {
         RuleFor(x => x.Name)
           .NotEmpty()

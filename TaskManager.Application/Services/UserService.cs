@@ -1,6 +1,8 @@
-﻿using Mapster;
+﻿using FluentValidation;
+using Mapster;
 using TaskManager.Application.DTOs;
 using TaskManager.Application.Interfaces;
+using TaskManager.Application.Validators;
 using TaskManager.Core.Constants;
 using TaskManager.Core.Entities;
 using TaskManager.Core.Interfaces;
@@ -15,12 +17,19 @@ public class UserService : IUserService
         _userRepository = userRepository;
         _jwtService = jwtService;
     }
-    public async Task<ResultDto<RegisterUserDto>> RegisterAsync(RegisterUserDto userRegisterDto)
+    public async Task<ResultDto<CreateUserDto>> RegisterAsync(CreateUserDto userRegisterDto)
     {
+        CreateUserValidator validator = new CreateUserValidator();
+
+        var validationResult = await validator.ValidateAsync(userRegisterDto);
+
+        if (!validationResult.IsValid)
+            return ResultDto<CreateUserDto>.ValidationFailure(validationResult.Errors);
+
         bool exists = await _userRepository.ExistsAsync(userRegisterDto.Email);
 
         if (exists)
-            return ResultDto<RegisterUserDto>.Failure(string.Format(Messages.UserAlreadyExists));
+            return ResultDto<CreateUserDto>.Failure(string.Format(Messages.UserAlreadyExists));
 
         var newUser = userRegisterDto.Adapt<User>();
 
@@ -29,7 +38,7 @@ public class UserService : IUserService
         newUser.HashPassword = BCrypt.Net.BCrypt.HashPassword(userRegisterDto.Password);
 
         await _userRepository.AddAsync(newUser);
-        return ResultDto<RegisterUserDto>.Success(string.Format(Messages.UserCreatedSucessfully));
+        return ResultDto<CreateUserDto>.Success(string.Format(Messages.UserCreatedSucessfully));
     }
 
     public async Task<ResultDto<LoginResponseDto>> LoginAsync(UserLoginDto userLoginDto)

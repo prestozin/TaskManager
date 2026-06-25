@@ -1,10 +1,12 @@
-﻿using TaskManager.Application.DTOs;
-using TaskManager.Application.Interfaces;
+﻿using FluentValidation;
 using Mapster;
-using TaskManager.Core.Interfaces;
-using TaskManager.Core.Entities;
-using TaskManager.Core.Shared;
+using TaskManager.Application.DTOs;
+using TaskManager.Application.Interfaces;
+using TaskManager.Application.Validators;
 using TaskManager.Core.Constants;
+using TaskManager.Core.Entities;
+using TaskManager.Core.Interfaces;
+using TaskManager.Core.Shared;
 
 namespace TaskManager.Application.Services;
 public class TaskService : ITaskService
@@ -64,6 +66,13 @@ public class TaskService : ITaskService
         if (task == null || userId == Guid.Empty)
             return ResultDto<TaskItem>.Failure(string.Format(Messages.TaskCreationFailed));
 
+        CreateTaskValidator validator = new CreateTaskValidator();
+
+        var validationResult = await validator.ValidateAsync(task);
+
+        if (!validationResult.IsValid)
+            return ResultDto<TaskItem>.ValidationFailure(validationResult.Errors);
+
         TaskItem newTask = task.Adapt<TaskItem>();
         newTask.UserId = userId;
 
@@ -74,6 +83,13 @@ public class TaskService : ITaskService
     {
         if (dto.Id == Guid.Empty || userId == Guid.Empty)
             return ResultDto<TaskResponseDto>.Failure(string.Format(Messages.TaskUpdateFailed));
+
+        EditTaskValidator validator = new EditTaskValidator();
+
+        var validationResult = await validator.ValidateAsync(dto);
+
+        if (!validationResult.IsValid)
+            return ResultDto<TaskResponseDto>.ValidationFailure(validationResult.Errors);
 
         TaskItem task = await _taskRepository.GetTaskById(dto.Id, userId);
 

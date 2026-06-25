@@ -14,6 +14,7 @@ public class TaskMapping : IRegister
   
 
         config.NewConfig<TaskItem, TaskResponseDto>()
+            .Map(dest => dest.Id, src => src.Id)
             .Map(dest => dest.CreatedAt, src => src.CreatedAt)
             .Map(dest => dest.Title, src =>src.Title)
             .Map(dest => dest.Description, src => src.Description)
